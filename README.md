@@ -8,7 +8,8 @@
 
 ## Requirements
 
-curl command
+* curl command
+* [CtrlP](https://github.com/kien/ctrlp.vim)
 
 ## Installation
 
