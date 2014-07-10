@@ -4,7 +4,7 @@
 
 ## Usage
 
-`<c-x><c-f>`
+`<c-x>,`
 
 ## Requirements
 
