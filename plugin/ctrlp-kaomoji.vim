@@ -11,8 +11,8 @@ command! Kaomoji cal ctrlp#kaomoji#start('n')
 if get(g:, 'kaomoji_key', '') == ''
   nnoremap <plug>(kaomoji) :call ctrlp#kaomoji#start('n')<cr>
   inoremap <plug>(kaomoji) <c-r>=ctrlp#kaomoji#start('i')<cr>
-  nmap <unique> <leader>F <plug>(kaomoji)
-  imap <unique> <leader>F <plug>(kaomoji)
+  nmap <unique> <c-x><c-f> <plug>(kaomoji)
+  imap <unique> <c-x><c-f> <plug>(kaomoji)
 else
   exe "nnoremap" g:kaomoji_key ":call ctrlp#kaomoji#start('n')<cr>"
   exe "inoremap" g:kaomoji_key "<c-r>=ctrlp#kaomoji#start('i')<cr>"
