@@ -32,16 +32,16 @@ function! ctrlp#kaomoji#init()
     call system('curl -s "http://kaosute.net/jisyo/pdf2.cgi?file=2ch_ver1&method=download" > ' . shellescape(s:datafile))
   endif
   let s:list = filter(split(iconv(join(readfile(s:datafile), "\n"), 'cp932', &encoding), "\n"), 'v:val !~ "^!" && v:val !~ "かおすて"')
-	return map(copy(s:list), 'join(split(v:val, "\t")[:1], "\t")')
+  return map(copy(s:list), 'join(split(v:val, "\t")[:1], "\t")')
 endfunc
 
 function! ctrlp#kaomoji#accept(mode, str)
   call ctrlp#exit()
-	let line = getline('.')
-	let pos = s:mode == 'i' ? s:col + 1 : s:col
-	let line = line[:pos] . a:str . line[pos+1:]
-	call setline('.', line)
-	if s:mode == 'i'
+  let line = getline('.')
+  let pos = s:mode == 'i' ? s:col + 1 : s:col
+  let line = line[:pos] . a:str . line[pos+1:]
+  call setline('.', line)
+  if s:mode == 'i'
     call feedkeys('a')
   endif
 endfunction
@@ -59,10 +59,10 @@ endfunction
 
 function! ctrlp#kaomoji#start(mode)
   let s:mode = a:mode
-	let g:moge = s:mode
+  let g:moge = s:mode
   let s:col = col('.')
   call ctrlp#init(ctrlp#kaomoji#id())
-	return ''
+  return ''
 endfunction
 
 " vim:fen:fdl=0:ts=2:sw=2:sts=2
