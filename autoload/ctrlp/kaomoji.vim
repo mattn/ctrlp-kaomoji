@@ -39,7 +39,7 @@ function! ctrlp#kaomoji#accept(mode, str)
   call ctrlp#exit()
   let line = getline('.')
   let pos = s:mode == 'i' ? s:col + 1 : s:col
-  let line = line[:pos] . a:str . line[pos+1:]
+  let line = line[:pos] . split(a:str, "\t")[1] . line[pos+1:]
   call setline('.', line)
   if s:mode == 'i'
     call feedkeys('a')
